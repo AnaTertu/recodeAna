@@ -1,4 +1,6 @@
+import React from 'react';
 import img from "../images/anaTertu.png";
+
 function Slogan(){
     return(
         <div>

@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { Suspense, lazy } from 'react'
-import Navbar from './components/NavBar';
+import Navbar from './components/NavBar/Navbar';
 import img from './images/img.png';
-import carreg from './videos/carreg.mp4';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 // import Slogan from './code-splintting/Slogan';
@@ -16,10 +16,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
             <Suspense fallback= {
-                <img src={img} alt=""/>
+                <img src={img} alt="logo-Ana"/>
                 }>
             <Slogan />
             </Suspense>
@@ -29,13 +29,18 @@ function App() {
               }>
                 <Rodape />
             </Suspense>
-
+          <>
             <Suspense fallback= {
-                <p> Carregando... um momento, grata!</p>
-             
+                <p> Carregando... um momento, grata!</p>             
             }>
+              <Router>
                 <Navbar/>
+                <Switch>
+                  <Route path='/' exact />
+                </Switch>
+              </Router>
             </Suspense>
+          </>
       </header>
     </div>
   );

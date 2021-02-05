@@ -1,4 +1,4 @@
-import img from "../images/anaTertu3x4.png";
+import img from "../images/anaTertu.png";
 function Slogan(){
     return(
         <div>
